@@ -21,7 +21,7 @@ function rollDice() {
 function updateRollHistory() {
     historyElement.innerHTML = '';
 
-    // for (let index = 0; index < historyList.length; index++) {
+    // for (let index = historyList.length -1; index >= 0; index--) {
     //     let historyUpdated = `
     //         <li>Roll ${index + 1}: <span>${getDiceFace(historyList[index])}</span></li>
 
@@ -29,9 +29,9 @@ function updateRollHistory() {
     //     historyElement.innerHTML += historyUpdated;
     // }
 
-    historyList.forEach((history,index) => {
+    historyList.reverse().forEach((history,index) => {
         let historyUpdated = `
-                    <li>Roll ${index +1}: <span>${getDiceFace(history)}</span></li>
+                    <li>Roll ${historyList.length -index}: <span>${getDiceFace(history)}</span></li>
 
         `
         historyElement.innerHTML += historyUpdated;
