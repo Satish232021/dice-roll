@@ -29,14 +29,15 @@ function updateRollHistory() {
     //     historyElement.innerHTML += historyUpdated;
     // }
 
-    historyList.reverse().forEach((history,index) => {
+    historyList.slice().reverse().forEach((history,index) => {
+        
         let historyUpdated = `
                     <li>Roll ${historyList.length -index}: <span>${getDiceFace(history)}</span></li>
 
         `
-        historyElement.innerHTML += historyUpdated;
+        historyElement.innerHTML += historyUpdated; 
     });
-
+    console.log(history);
 
 
     
